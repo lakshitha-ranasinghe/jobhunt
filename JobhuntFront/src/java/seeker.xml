@@ -1,0 +1,113 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: Lakshitha -->
+ 
+<struts>
+    <package name="seeker" extends="json-default">
+
+        <interceptors>
+            <interceptor class="com.jobhunt.interceptor.LoginCheck" name="LoginCheck">
+            </interceptor>
+            <interceptor-stack name="jobhuntStack">
+                <interceptor-ref name="LoginCheck" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+
+        <global-results>
+            <result name="login">/authenty/index.jsp</result>
+        </global-results>
+        
+        <action name="ManageProfile" class="com.jobhunt.action.ManageProfile">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/index.jsp</result>
+            <result name="update">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="ManageEducationalProfile" class="com.jobhunt.action.ManageEducationalProfile">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/index.jsp</result>
+            <result name="update">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="ManageProfessionalProfile" class="com.jobhunt.action.ManageProfessionalProfile">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/index.jsp</result>
+            <result name="update">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="OpenProfile" class="com.jobhunt.action.OpenProfile">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/profile.jsp</result>
+        </action>
+        
+        <action name="OpenEducationalProfile" class="com.jobhunt.action.OpenEducationalProfile">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/educationprofile.jsp</result>
+            <result name="new">/seeker/educationprofile.jsp</result>
+            <result name="error">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="OpenProfessionalProfile" class="com.jobhunt.action.OpenProfessionalProfile">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/professionalprofile.jsp</result>
+            <result name="new">/seeker/professionalprofile.jsp</result>
+            <result name="error">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="OpenRecommendation" class="com.jobhunt.action.OpenRecommendation">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/recommendations.jsp</result>
+            <result name="error">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="OpenJobseekerInterviews" class="com.jobhunt.action.OpenJobseekerInterviews">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/interviews.jsp</result>
+            <result name="error">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="OpenCV" class="com.jobhunt.action.OpenGenerateCV">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/cv.jsp</result>
+            <result name="error">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="ViewApplicants" class="com.jobhunt.action.OpenApplicants">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/company/viewapplicants.jsp</result>
+        </action>
+        
+        <action name="OpenJobseekerOptions" class="com.jobhunt.action.OpenOptions" method="seekerOptions">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/options.jsp</result>
+        </action>
+        
+        <action name="GenerateCV" class="com.jobhunt.report.GenerateCV">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="inputName">fileStream</param>
+                <param name="contentDisposition">attachment;filename="CV.pdf"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        
+        <action name="ManageSeekerOption" class="com.jobhunt.action.ManageOption" method="manageSeekerOption">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="GetJobseekerProfile" class="com.jobhunt.ajaxaction.GetJobseekerProfile">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+
+        <action name="ChangeUserPassword" class="com.jobhunt.action.ManageOption" method="changeUserPassword">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/index.jsp</result>
+        </action>
+    </package>
+</struts>

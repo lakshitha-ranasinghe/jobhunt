@@ -1,0 +1,200 @@
+﻿<Controls:MetroWindow x:Class="NIBM_Project.JobSeekerQualificationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+
+        Title="JobSeekerQualificationWindow" Height="730" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="White">
+    <Grid Name="jobSeekerQualificationWindowGrid" Margin="0,0,2,1" AllowDrop="True">
+
+        <GroupBox Header="Secondary Education " HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top" BorderThickness="0.3,1,0.3,0.3" Height="341" Width="691" FontSize="18" Foreground="White" Background="#FF49B4E8" BorderBrush="#FF49B4E8" FontFamily="Segoe UI Light"/>
+        <GroupBox Header="Higher Education" HorizontalAlignment="Left" Height="156" Margin="50,449,0,0" VerticalAlignment="Top" BorderThickness="0.3,1,0.3,0.3" Width="691" FontSize="18" Foreground="White" Background="#FF49B4E8" BorderBrush="#FF49B4E8" FontFamily="Segoe UI Light"/>
+
+        <Label Content="Qualifications" HorizontalAlignment="Left" Margin="43,25,0,0" VerticalAlignment="Top" Width="350" Height="61" FontSize="36" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <Label Content="Ordinary Level" HorizontalAlignment="Left" Margin="80,140,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Subject" HorizontalAlignment="Left" Margin="80,205,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Result" HorizontalAlignment="Left" Margin="300,205,0,0" VerticalAlignment="Top" Height="26" Width="50" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Advanced Level" HorizontalAlignment="Left" Margin="420,140,0,0" VerticalAlignment="Top" Height="26" Width="108" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Subject" HorizontalAlignment="Left" Margin="420,205,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Result" HorizontalAlignment="Left" Margin="668,205,0,0" VerticalAlignment="Top" Height="26" Width="50" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="School" HorizontalAlignment="Left" Margin="80,170,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="School" HorizontalAlignment="Left" Margin="420,170,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="University / Institute" HorizontalAlignment="Left" Margin="85,480,0,0" VerticalAlignment="Top" Height="26" Width="156" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Course" HorizontalAlignment="Left" Margin="300,480,0,0" VerticalAlignment="Top" Height="26" Width="100" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Year " HorizontalAlignment="Left" Margin="500,480,0,0" VerticalAlignment="Top" Height="26" Width="119" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Grade / GPA" HorizontalAlignment="Left" Margin="635,480,0,0" VerticalAlignment="Top" Height="26" Width="83" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="OLSchool" Text="{Binding ordinaryLevelSchool, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="188,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="ALSchool" Text="{Binding advanceLevelSchool, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="553,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="OLFirstSubject" Text="{Binding firstSubject, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="80,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="OLSecondSubject" Text="{Binding secondSubject, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="80,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="OLThirdSubject" Text="{Binding thirdSubject, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="80,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="OLFourthSubject" Text="{Binding fourthSubject, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="80,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="OLFifthSubject" Text="{Binding fifthSubject, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="80,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="OLSixthSubject" Text="{Binding sixthSubject, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="80,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="FirstALSubject" Text="{Binding firstSubjectA, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="420,245,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="SecondALSubject" Text="{Binding secondSubjectA, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="420,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="ThirdALSubject" Text="{Binding thirdSubjectA, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="420,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="FourthALSubject" Text="{Binding fourthSubjectA, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="420,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="FirstInstitute" Text="{Binding firstInstitute, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="85,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="FirstCourse" Text="{Binding firstCourse, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="285,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="FirstYear" Text="{Binding firstYear, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="500,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="FirstGPA" Text="{Binding firstGPA, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="635,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" RenderTransformOrigin="0.491,0.541" FontFamily="Segoe UI Light">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.278"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="SecondInstitute" Text="{Binding secondInstitute, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="85,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="SecondCourse" Text="{Binding secondCourse, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="285,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="SecondYear" Text="{Binding secondYear, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="500,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="SecondGPA" Text="{Binding secondGPA, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="635,535,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="ThirdInstitute" Text="{Binding thirdInstitute, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="85,565,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="ThirdCourse" Text="{Binding thirdCourse, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="285,565,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="ThirdYear" Text="{Binding thirdYear, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="500,565,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontFamily="Segoe UI Light"/>
+        <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="ThirdGPA" Text="{Binding thirdGPA, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="635,565,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" FontFamily="Segoe UI Light"/>
+        <ComboBox x:Name="OLYear" SelectedValue="{Binding ordinaryLevelYear, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="188,140,0,0" VerticalAlignment="Top" Width="165" Height="25" RenderTransformOrigin="0.5,0.5" FontFamily="Segoe UI Light">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.108"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+            <ComboBoxItem Content="1999" IsSelected="True"/>
+            <ComboBoxItem Content="2000"/>
+            <ComboBoxItem Content="2001"/>
+            <ComboBoxItem Content="2002"/>
+            <ComboBoxItem Content="2003"/>
+            <ComboBoxItem Content="2004"/>
+            <ComboBoxItem Content="2005"/>
+            <ComboBoxItem Content="2006"/>
+            <ComboBoxItem Content="2007"/>
+            <ComboBoxItem Content="2008"/>
+            <ComboBoxItem Content="2009"/>
+            <ComboBoxItem Content="2010"/>
+            <ComboBoxItem Content="2011"/>
+            <ComboBoxItem Content="2012"/>
+            <ComboBoxItem Content="2013"/>
+            <ComboBoxItem Content="2014"/>
+        </ComboBox>
+        <ComboBox x:Name="ALYear" SelectedValue="{Binding advanceLevelYear, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="553,140,0,0" VerticalAlignment="Top" Width="165" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="1999" IsSelected="True"/>
+            <ComboBoxItem Content="2000"/>
+            <ComboBoxItem Content="2001"/>
+            <ComboBoxItem Content="2002"/>
+            <ComboBoxItem Content="2003"/>
+            <ComboBoxItem Content="2004"/>
+            <ComboBoxItem Content="2005"/>
+            <ComboBoxItem Content="2006"/>
+            <ComboBoxItem Content="2007"/>
+            <ComboBoxItem Content="2008"/>
+            <ComboBoxItem Content="2009"/>
+            <ComboBoxItem Content="2010"/>
+            <ComboBoxItem Content="2011"/>
+            <ComboBoxItem Content="2012"/>
+            <ComboBoxItem Content="2013"/>
+            <ComboBoxItem Content="2014"/>
+        </ComboBox>
+        <ComboBox x:Name="FirstOLResult" SelectedValue="{Binding firstSubjectR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="285,245,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="SecondOLResult" SelectedValue="{Binding secondSubjectR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="285,275,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="ThirdOLResult" SelectedValue="{Binding thirdSubjectR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="285,305,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="FourthOLResult" SelectedValue="{Binding fourthSubjectR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="285,335,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="FifthOLResult" SelectedValue="{Binding fifthSubjectR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="285,365,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="SixthOLResult" SelectedValue="{Binding sixthSubjectR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="285,395,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="FirstALResult" SelectedValue="{Binding firstSubjectAR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="653,245,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="SecondALResult" SelectedValue="{Binding secondSubjectAR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="653,275,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="ThirdALResult" SelectedValue="{Binding thirdSubjectAR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="653,305,0,0" VerticalAlignment="Top" Width="65" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X" IsSelected="True"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <ComboBox x:Name="FourthALResult" SelectedValue="{Binding fourthSubjectAR, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" Margin="653,335,74,0" VerticalAlignment="Top" Height="25" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="X" IsSelected="True"/>
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="S"/>
+            <ComboBoxItem Content="F"/>
+        </ComboBox>
+        <Button Style="{StaticResource AccentedSquareButtonStyle}" Content="Clear" HorizontalAlignment="Left" Margin="165,624,0,0" VerticalAlignment="Top" Width="168" Height="57" Foreground="Black" Click="Button_Click_1" Background="#FF49B4E8" BorderBrush="Black" FontSize="16" FontFamily="Segoe UI Light">
+
+        </Button>
+        <Button Style="{StaticResource AccentedSquareButtonStyle}" Content="Next" HorizontalAlignment="Left" Margin="470,622,0,0" VerticalAlignment="Top" Width="168" Height="57" Foreground="Black" Click="Button_Click" Background="#FF49B4E8" BorderBrush="Black" FontSize="16" FontFamily="Segoe UI Light">
+
+        </Button>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="255,228,0,0" VerticalAlignment="Top" Width="257" RenderTransformOrigin="0.5,0.5" FontFamily="Segoe UI Light">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.885"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Separator HorizontalAlignment="Left" Height="19" Margin="30,70,0,0" VerticalAlignment="Top" Width="724" FontFamily="Segoe UI Light" Background="#FF2D2D30" Foreground="Black" BorderBrush="#FF49B4E8"/>
+    </Grid>
+</Controls:MetroWindow>

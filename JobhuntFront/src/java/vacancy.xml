@@ -1,0 +1,84 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: Lakshitha -->
+ 
+<struts>
+    <package name="vacancy" extends="json-default">     
+        <interceptors>
+            <interceptor class="com.jobhunt.interceptor.LoginCheck" name="LoginCheck">
+            </interceptor>
+            <interceptor-stack name="jobhuntStack">
+                <interceptor-ref name="LoginCheck" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+
+        <global-results>
+            <result name="login">/authenty/index.jsp</result>
+        </global-results>
+        
+        <action name="AddVacancy" class="com.jobhunt.action.AddVacancy">
+            <interceptor-ref name="jobhuntStack"/>
+            <result name="success">/company/index.jsp</result>
+        </action> 
+        
+        <action name="OpenNewVacancy" class="com.jobhunt.action.OpenNewVacancy">  
+            <interceptor-ref name="jobhuntStack"/> 
+            <result name="success">/company/vacancy.jsp</result>
+            <result name="error">/company/index.jsp</result>
+        </action>
+        
+        <action name="Recommendation" class="com.jobhunt.ajaxaction.GetRecommendations">
+            <interceptor-ref name="jobhuntStack"/>
+            <result type="json"></result>
+        </action>
+        
+        <action name="GetVacancyUpdateToData" class="com.jobhunt.ajaxaction.GetVacancyDataToUpdate">
+            <interceptor-ref name="jobhuntStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="OpenUpdateVacancy" class="com.jobhunt.action.OpenUpdateVacancies">   
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/company/viewvacancy.jsp</result>
+            <result name="error">/company/index.jsp</result>
+        </action>
+        
+        <action name="DeleteVacancy" class="com.jobhunt.ajaxaction.DeleteVacancy">   
+            <interceptor-ref name="jobhuntStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="VacancyDataForRecommendation" class="com.jobhunt.ajaxaction.GetVacancyData" method="vacancyDataForRecommendation">   
+            <interceptor-ref name="jobhuntStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="JobSeekerInterviewVacancyData" class="com.jobhunt.ajaxaction.GetVacancyData" method="jobseekerInterviewVacancyData">   
+            <interceptor-ref name="jobhuntStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="ApplyJob" class="com.jobhunt.ajaxaction.ApplyJob">   
+            <interceptor-ref name="jobhuntStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="AutomaticRecommendation" class="com.jobhunt.ajaxaction.GetAutomaticRecommendations">  
+            <interceptor-ref name="jobhuntStack" /> 
+            <result type="json"></result>
+        </action>
+        
+        <action name="ApproveRejectVacancy" class="com.jobhunt.ajaxaction.ApproveRejectVacancy">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="UpdateClosingDate" class="com.jobhunt.ajaxaction.UpdateClosingDate">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+    </package>       
+</struts>

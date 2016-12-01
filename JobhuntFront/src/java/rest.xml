@@ -1,0 +1,41 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<struts>
+    <package name="rest" extends="json-default" namespace="/api">
+        
+        <interceptors>
+         <interceptor name="restauth"
+            class="com.jobhunt.interceptor.RestAuth" />
+         
+            <interceptor-stack name="restStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="restauth"/>
+            </interceptor-stack>
+        </interceptors>
+        
+       
+        <action name="Login" class="com.jobhunt.rest.Login">
+            <result type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="Jobseeker" class="com.jobhunt.rest.JobseekerProfile">
+            <interceptor-ref name="restStack" />
+            <result type="json">
+                <param name="noCache">true</param>
+                <param name="root">profile</param>
+                <param name="excludeProperties">
+                    vacancyApplyCollection
+                </param>
+                <param name="excludeNullProperties">true</param>
+            </result>
+            <result name="error" type="json"></result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="286ae90b-0047-4233-91aa-7ac105459bdf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="7160d820-a90f-46de-ad87-14cb60a2c4c6"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="description" class="java.lang.String"/>
+	<parameter name="type" class="java.lang.String"/>
+	<parameter name="jobType" class="java.lang.String"/>
+	<parameter name="telephone" class="java.lang.String"/>
+	<parameter name="mobile" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="website" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="148" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="148" forecolor="#333333" backcolor="#333333" uuid="231ee791-9807-4838-8720-1fef8d1ec74a"/>
+			</rectangle>
+			<textField>
+				<reportElement x="21" y="12" width="213" height="56" forecolor="#CCCCCC" backcolor="#000000" uuid="192708eb-34f2-4ca1-afae-5ccfbdf3f3cc"/>
+				<textElement>
+					<font fontName="Serif" size="36"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="79" width="480" height="20" forecolor="#CCCCCC" backcolor="#000000" uuid="2f1ad38d-b6d7-475d-bc9f-5762e060f799"/>
+				<textElement>
+					<font fontName="Serif" size="13" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="579" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="25" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="49bcc4eb-4b2f-41df-9056-374c62c0702e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="50" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="96b0f81e-ffb1-4a92-9600-b4b8a86d4042"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="75" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="18725d38-c245-4fd7-95b6-475865a3c4cd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="100" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="586fd6d2-642d-4c9f-b76f-4e71eaf2415c"/>
+			</rectangle>
+			<textField>
+				<reportElement x="287" y="55" width="100" height="20" uuid="e7a7937c-0248-4caf-bb2e-2206a8a355c5"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="13" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{jobType}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="73" y="50" width="100" height="25" uuid="60a698b7-7246-49c0-92ce-e7eea75903ca"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Job Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="100" width="100" height="25" uuid="2291e85c-5ff1-4e37-909c-80d974378f50"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Web Site]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="287" y="100" width="100" height="25" uuid="577bafe5-0a94-4f7c-9093-6c166d791b1f"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{website}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="200" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="acc2b33a-ab90-437e-877d-31fde249efe6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="150" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="9eb2b702-9541-4568-ad36-0c6552ced44f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="125" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="87dcec14-0d1b-4465-bedb-27e14b0b3811"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="175" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="07afe8c8-0a4f-4d89-b706-48c5649bd1f0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="73" y="150" width="100" height="25" uuid="74300e00-f98e-4ab8-884a-6e8671e4e7e5"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Email Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="73" y="200" width="100" height="25" uuid="529d4105-3a0d-49dc-aa97-09aa7404a157"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="287" y="150" width="100" height="25" uuid="d3cce060-bcbb-42b3-ac8b-0db81d1f4f90"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="200" width="100" height="25" uuid="a7e309a9-d028-4752-bd86-2769d3bfacfb"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"+$P{telephone}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="276" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="c44cafac-94bc-4993-b2b8-3841cb546201"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="226" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="e932dc4b-7020-42f4-b9ee-da71079fc68f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="251" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="923498b2-9687-4823-b94a-542c11954c43"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="300" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="217a8912-737a-42d6-8828-fd6c0e636e96"/>
+			</rectangle>
+			<textField>
+				<reportElement x="435" y="201" width="100" height="25" uuid="b8f76de2-4412-43c6-9c02-3dbdd1a0388f"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["0"+$P{mobile}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="365a738f-e1a7-4e4f-8633-11539774ec85"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="73" y="0" width="100" height="25" uuid="174aeed6-6ae1-4fb8-abb0-284f64afef57"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Company type]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="287" y="0" width="100" height="25" uuid="5f14db01-6e3a-40f2-ab2f-55a6ffa2772a"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Serif" size="14" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{type}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="325" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="71ef7479-16a6-4461-b228-7e72ffbdf93d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="375" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="2865bcd5-2bab-4086-bdb6-309b0cfe2386"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="400" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="0baeb472-dae5-4f5e-abe8-7a54c813796e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="350" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="d04e5b9e-a27a-4c38-90a1-f84c7c14bc59"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="425" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="df22d151-7525-4593-a435-a1b19aca5ae4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="450" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="5ac353fe-637f-467e-9c60-aaf1d7b3f6da"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="475" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="193020d6-88cb-4329-82ae-3f94b49a1289"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="500" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="c0450f9d-5ca6-427a-89b7-bd5102613007"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="525" width="572" height="25" forecolor="#333333" backcolor="#333333" uuid="2e3ebe83-28a6-4265-80cb-eb111a29e129"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="550" width="572" height="25" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="f28cd51a-7876-47b9-978e-23ba668137c1"/>
+			</rectangle>
+		</band>
+	</detail>
+</jasperReport>

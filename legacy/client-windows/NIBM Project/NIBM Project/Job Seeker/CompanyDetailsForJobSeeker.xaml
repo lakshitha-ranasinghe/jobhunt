@@ -1,0 +1,25 @@
+﻿<Controls:MetroWindow x:Class="NIBM_Project.CompanyDetailsForJobSeeker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Company Details" Height="730" Width="900" Foreground="#FF160966" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <GroupBox Header=" Company List " HorizontalAlignment="Left" Height="397" Margin="50,120,0,0"  VerticalAlignment="Top" Width="305" BorderThickness="0.3,1,0.3,0.3" FontSize="18"  Foreground="White" Background="#FF49B4E8" BorderBrush="#FF49B4E8" FontFamily="Segoe UI Light"/>
+        <GroupBox Header=" Company Details " HorizontalAlignment="Left" Height="397" Margin="390,120,0,0"  VerticalAlignment="Top" Width="460" BorderThickness="0.3,1,0.3,0.3" FontSize="18"  Foreground="White" Background="#FF49B4E8" BorderBrush="#FF49B4E8" FontFamily="Segoe UI Light"/>
+        <Label Content="Companies we collaborated with..." HorizontalAlignment="Left" Margin="30,25,0,0" VerticalAlignment="Top" Width="544" Height="61" FontSize="36" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="30,35,0,0" VerticalAlignment="Top" Width="796" FontFamily="Segoe UI Light" Background="Black"/>
+        <ListBox Name="CompanyDataListBox" Margin="75,170,566,0"  Height="333" VerticalAlignment="Top" BorderThickness="0"  Background="{x:Null}" Foreground="Black" FontSize="14" FontFamily="Segoe UI Light" SelectionChanged="CompanyDataListBox_SelectionChanged" />
+
+        <Label Content="Company Name" HorizontalAlignment="Left" Margin="420,170,0,0" VerticalAlignment="Top" Height="30" Width="110" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="CompanyName" Margin="533,0,68,371" Foreground="Black" FontSize="16" Background="{x:Null}" BorderThickness="0" IsEnabled="False" Height="31" VerticalAlignment="Bottom" FontFamily="Segoe UI Light"/>
+        <Label Content="Job Type" HorizontalAlignment="Left" Margin="420,215,0,0" VerticalAlignment="Top" Height="30" Width="110" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="JobType" Margin="533,214,69,326" Foreground="Black" FontSize="16" BorderThickness="0" IsEnabled="False" Background="{x:Null}" Height="31" FontFamily="Segoe UI Light"/>
+        <Label Content="Telephone No" HorizontalAlignment="Left" Margin="420,260,0,0" VerticalAlignment="Top" Height="30" Width="110" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="Telephone" Margin="533,259,69,281" Foreground="Black" FontSize="16" BorderThickness="0" IsEnabled="False" Height="31" RenderTransformOrigin="0.532,0.269" Background="{x:Null}" FontFamily="Segoe UI Light"/>
+        <Label Content="E-Mail Address" HorizontalAlignment="Left" Margin="420,305,0,0" VerticalAlignment="Top" Height="30" Width="110" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="Email" Margin="533,304,69,237" Foreground="Black" FontSize="16" BorderThickness="0" IsEnabled="False" BorderBrush="White" Background="{x:Null}" Height="31" FontFamily="Segoe UI Light"/>
+        <Label Content="Web Site" HorizontalAlignment="Left" Margin="420,350,0,0" VerticalAlignment="Top" Height="30" Width="110" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="Website" Margin="533,349,69,191" Foreground="Black" FontSize="16" BorderThickness="0" IsEnabled="False" BorderBrush="White" Height="31" Background="{x:Null}" FontFamily="Segoe UI Light"/>
+
+    </Grid>
+</Controls:MetroWindow>

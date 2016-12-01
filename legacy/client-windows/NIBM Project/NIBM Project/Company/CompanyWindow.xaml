@@ -1,0 +1,80 @@
+﻿<Controls:MetroWindow x:Class="NIBM_Project.CompanyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Registration" Height="730" Width="800" WindowStartupLocation="CenterScreen" FontSize="14" ResizeMode="CanMinimize">
+    <Controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Purple.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Controls:MetroWindow.Resources>
+
+    <Grid Name="CompanyWindowGrid" HorizontalAlignment="Stretch">
+        <Label Content="Tell us about your Company..!!" HorizontalAlignment="Left" Margin="50,24,0,0" VerticalAlignment="Top" Width="483" Height="61" FontSize="36" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <GroupBox Header="Company Details" HorizontalAlignment="Left" Height="248" Margin="50,108,0,0" VerticalAlignment="Top" Width="699" FontSize="18" BorderBrush="#FF874CEE" FontFamily="Segoe UI Light" BorderThickness="0.3,1,0.3,0.3" Foreground="Black" Background="#FF874CEE"/>
+        <Label Content="Company Name" HorizontalAlignment="Left" Margin="70,155,0,0" VerticalAlignment="Top" Height="28" Width="116" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="CompanyName" Text="{Binding companyName, UpdateSourceTrigger=PropertyChanged}" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Enter Company Name" HorizontalAlignment="Left" Height="26" Margin="200,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Light" />
+        <Label Content="Company Type" HorizontalAlignment="Left" Margin="70,190,0,0" VerticalAlignment="Top" Height="28" Width="116" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <ComboBox x:Name="CompanyTypeBox" SelectedValue="{Binding companyType, UpdateSourceTrigger=PropertyChanged}" Controls:ComboBoxHelper.EnableVirtualizationWithGrouping="True" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="200,190,0,0" VerticalAlignment="Top" Width="176" Foreground="Black" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="Select a Type" Foreground="DarkGray" IsSelected="true" />
+            <ComboBoxItem Content="Private"/>
+            <ComboBoxItem Content="Public" />
+            <ComboBoxItem Content="Subsidiaries"/>
+            <ComboBoxItem Content="Offshore Company"/>
+            <ComboBoxItem Content="Joint Venture Company"/>
+        </ComboBox>
+        <Label Content="Telephone" HorizontalAlignment="Left" Margin="70,225,0,0" VerticalAlignment="Top" Height="28" Width="86" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="TeleOne" Text="{Binding firstTelephone, UpdateSourceTrigger=PropertyChanged}" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Telephone Number" HorizontalAlignment="Left" Height="26" Margin="200,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" RenderTransformOrigin="0.475,2.885" FontFamily="Segoe UI Light" />
+        <TextBox x:Name="TeleTwo" Text="{Binding secondTelephone, UpdateSourceTrigger=PropertyChanged}" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Mobile Number" HorizontalAlignment="Left" Height="26" Margin="200,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" RenderTransformOrigin="0.475,2.885" FontFamily="Segoe UI Light"/>
+        <Label Content="E-Mail" HorizontalAlignment="Left" Margin="70,295,0,0" VerticalAlignment="Top" Height="28" Width="69" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="EMail" Text="{Binding email, UpdateSourceTrigger=PropertyChanged}" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="E-Mail Address" HorizontalAlignment="Left" Height="26" Margin="200,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Light" />
+        <Label Content="Address" HorizontalAlignment="Left" Margin="435,155,0,0" VerticalAlignment="Top" Height="28" Width="69" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox Text="{Binding addressLine1, UpdateSourceTrigger=PropertyChanged}" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Address Line 1" HorizontalAlignment="Left" Height="26" Margin="540,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" x:Name="AddressLine1" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="AddressLine2" Text="{Binding addressLine2, UpdateSourceTrigger=PropertyChanged}" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Address Line 2" HorizontalAlignment="Left" Height="26" Margin="540,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Light" >
+        </TextBox>
+        <ComboBox x:Name="AddressLine3Box"  SelectedValue="{Binding addressLine3, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="540,225,0,0" VerticalAlignment="Top" Width="176" Foreground="Black" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="Province" Foreground="DarkGray" IsSelected="true" />
+            <ComboBoxItem Content="Central"/>
+            <ComboBoxItem Content="Eastern"/>
+            <ComboBoxItem Content="North Central"/>
+            <ComboBoxItem Content="Northern"/>
+            <ComboBoxItem Content="Sabaragamu"/>
+            <ComboBoxItem Content="Southern"/>
+            <ComboBoxItem Content="Uva"/>
+            <ComboBoxItem Content="Werstern"/>
+        </ComboBox>
+        <Label Content="Web Site" HorizontalAlignment="Left" Margin="435,260,0,0" VerticalAlignment="Top" Height="28" Width="69" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="WebSite" Text="{Binding website, UpdateSourceTrigger=PropertyChanged}" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Web Site Address" HorizontalAlignment="Left" Height="26" Margin="540,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontFamily="Segoe UI Light"/>
+
+        <GroupBox Header="Preferences" HorizontalAlignment="Left" Height="172" Margin="50,378,0,0" VerticalAlignment="Top" Width="699"  FontSize="18" BorderBrush="#FF874CEE" FontFamily="Segoe UI Light" BorderThickness="0.3,1,0.3,0.3" Foreground="Black" Background="#FF874CEE"/>
+        <Label Content="Job types you offer" HorizontalAlignment="Left" Margin="70,420,0,0" VerticalAlignment="Top" Height="28" Width="137" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="70,455,0,0" VerticalAlignment="Top" Height="28" Width="97" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="50,35,0,0" VerticalAlignment="Top" Width="699" FontFamily="Segoe UI Light" Background="Black"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="300,190,0,0" VerticalAlignment="Top" Width="196" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.885"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+
+        <Button  Style="{StaticResource AccentedSquareButtonStyle}" Content="Back" HorizontalAlignment="Left" Margin="87,587,0,0" VerticalAlignment="Top" Width="168" Height="57" FontFamily="Segoe UI Light" RenderTransformOrigin="0.538,-0.615" FontSize="16" Background="#FF874CEE" BorderBrush="Black" Foreground="Black" Click="Button_Click_2"/>
+        <Button  Style="{StaticResource AccentedSquareButtonStyle}" Content="Clear" HorizontalAlignment="Left" Margin="319,587,0,0" VerticalAlignment="Top" Width="168" Height="57" FontFamily="Segoe UI Light" RenderTransformOrigin="0.538,-0.615" FontSize="16" Background="#FF874CEE" BorderBrush="Black" Foreground="Black" Click="Button_Click_1"/>
+        <Button  Style="{StaticResource AccentedSquareButtonStyle}" Content="Submit" HorizontalAlignment="Left" Margin="560,587,0,0" VerticalAlignment="Top" Width="168" Height="57" FontFamily="Segoe UI Light" RenderTransformOrigin="0.538,-0.615" FontSize="16" Background="#FF874CEE" BorderBrush="Black" Foreground="Black" Click="Button_Click" />
+        <TextBox x:Name="Description" Text="{Binding description, UpdateSourceTrigger=PropertyChanged}" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Enter Brief Description About Jobs Your Offer " HorizontalAlignment="Left" Height="73" Margin="330,455,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="386" FontFamily="Segoe UI Light"/>
+        <ComboBox x:Name="JobTypeBox" SelectedValue="{Binding offeredJobTypes, UpdateSourceTrigger=PropertyChanged}" SelectedValuePath="Content" HorizontalAlignment="Left" Margin="330,420,0,0" VerticalAlignment="Top" Width="386" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="Select a job type" Foreground="DarkGray"  />
+            <ComboBoxItem Content="Information Technology"/>
+            <ComboBoxItem Content="Management"/>
+            <ComboBoxItem Content="Engineering"/>
+            <ComboBoxItem Content="Education"/>
+            <ComboBoxItem Content="Sales and Marketing"/>
+            <ComboBoxItem Content="Other"/>
+        </ComboBox>
+    </Grid>
+</Controls:MetroWindow>

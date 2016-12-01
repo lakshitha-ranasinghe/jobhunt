@@ -1,0 +1,95 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: Lakshitha -->
+ 
+<struts>
+    <package name="company" extends="json-default">
+        <interceptors>
+            <interceptor class="com.jobhunt.interceptor.LoginCheck" name="LoginCheck">
+            </interceptor>
+            <interceptor-stack name="jobhuntStack">
+                <interceptor-ref name="LoginCheck" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+
+        <global-results>
+            <result name="login">/authenty/index.jsp</result>
+        </global-results>
+        
+        <action name="OpenCompanyProfile" class="com.jobhunt.action.OpenCompanyProfile">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/company/profile.jsp</result>     
+        </action>
+        
+        <action name="OpenCompanyOptions" class="com.jobhunt.action.OpenOptions" method="companyOptions">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/company/options.jsp</result>
+        </action>
+
+        <action name="ManageCompanyProfile" class="com.jobhunt.action.ManageCompanyProfile">   
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/company/index.jsp</result>
+            <result name="update">/company/index.jsp</result>
+        </action>
+        
+        <action name="ViewCompanies" class="com.jobhunt.action.OpenCompanyDetails">   
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/seeker/companydetails.jsp</result>
+            <result name="update">/seeker/index.jsp</result>
+        </action>
+        
+        <action name="SearchCompanies" class="com.jobhunt.ajaxaction.SearchCompanies" method="execute">   
+            <interceptor-ref name="jobhuntStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="SearchCompany" class="com.jobhunt.ajaxaction.SearchCompanies" method="findCompanyDetails">   
+            <interceptor-ref name="jobhuntStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="CheckUserAlreadyExist" class="com.jobhunt.ajaxaction.RegistrationValidation" method="checkUserExistance">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="CheckPasswordMatch" class="com.jobhunt.ajaxaction.RegistrationValidation" method="checkPasswordMatch">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="GenerateCompanyDetails" class="com.jobhunt.report.GenerateCompanyDetails">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="inputName">fileStream</param>
+                <param name="contentDisposition">attachment;filename="Company.pdf"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        
+        <action name="GetInterviewDates" class="com.jobhunt.ajaxaction.GetInterviewDates" method="companyInterviews">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="GetAllInterviewDates" class="com.jobhunt.ajaxaction.GetInterviewDates" method="allInterviews">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+          
+        <action name="OpenCompanyInterviews" class="com.jobhunt.action.OpenCompanyInterviews">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/company/interviews.jsp</result>
+            <result name="error">/company/index.jsp</result>
+        </action>
+        
+        <action name="ChangeCompanyPassword" class="com.jobhunt.action.ManageOption" method="changeUserPassword">
+            <interceptor-ref name="jobhuntStack" />
+            <result name="success">/company/index.jsp</result>
+        </action>
+    </package>
+</struts>

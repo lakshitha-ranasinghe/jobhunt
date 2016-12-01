@@ -1,0 +1,92 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="seeker.xml"/>
+    <include file="company.xml"/>
+    <include file="vacancy.xml"/>
+    <include file="rest.xml"/>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="json-default">
+        <interceptors>
+            <interceptor class="com.jobhunt.interceptor.LoginCheck" name="LoginCheck">
+            </interceptor>
+            <interceptor-stack name="jobhuntStack">
+                <interceptor-ref name="LoginCheck" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+
+        <global-results>
+            <result name="login">/authenty/index.jsp</result>
+        </global-results>
+ 
+        <action name="Login" class="com.jobhunt.action.Login">
+            <result name="seeker">/seeker/index.jsp</result>
+            <result name="company">/company/index.jsp</result>
+            <result name="error">/authenty/error.jsp</result>
+        </action>
+        
+        <action name="Register" class="com.jobhunt.action.Register">
+            <result name="seeker">/authenty/welcome.jsp</result>
+            <result name="company">/authenty/welcome.jsp</result>
+            <result name="error">/authenty/error.jsp</result>
+        </action>
+        
+        <action name="Logout" class="com.jobhunt.action.Logout">
+            <result name="success">/authenty/index.jsp</result>
+            <result name="company">/company/index.jsp</result>
+            <result name="error">/authenty/error.jsp</result>
+        </action>
+        
+        <action name="OpenSeekerDashboard" class="com.jobhunt.action.OpenDashboard" method="seekerDashboard">
+            <result name="seeker">/seeker/index.jsp</result>   
+        </action>
+        
+        <action name="OpenCompanyDashboard" class="com.jobhunt.action.OpenDashboard" method="companyDashboard">
+            <result name="company">/company/index.jsp</result>   
+        </action>
+        
+        <action name="CheckUserAlreadyExist" class="com.jobhunt.ajaxaction.RegistrationValidation" method="checkUserExistance">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="CheckPasswordMatch" class="com.jobhunt.ajaxaction.RegistrationValidation" method="checkPasswordMatch">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="GetTopNavData" class="com.jobhunt.ajaxaction.GetDashboardData" method="getTopNavData">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="CompanyNameForTopNav" class="com.jobhunt.ajaxaction.GetDashboardData" method="companyNameForTopNav">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="GetApprovesAndRejected" class="com.jobhunt.ajaxaction.GetDashboardData" method="approvalsAndRejectsForSeeker">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="OpenLogin" class="com.jobhunt.action.OpenWelcome">
+            <result name="success">/authenty/index.jsp</result>   
+        </action>
+        
+        <action name="VacancyInformationForJobseeker" class="com.jobhunt.ajaxaction.GetDashboardData" method="vacancyInformationForJobseeker">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+        <action name="CompanyApprovalRejectInformation" class="com.jobhunt.ajaxaction.GetDashboardData" method="upcomingDetailsForCompany">
+            <interceptor-ref name="defaultStack" />
+            <result type="json"></result>
+        </action>
+        
+         
+    </package>
+</struts>

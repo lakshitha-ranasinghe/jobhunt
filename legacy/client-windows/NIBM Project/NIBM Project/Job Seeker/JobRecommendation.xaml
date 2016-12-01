@@ -1,0 +1,86 @@
+﻿<Controls:MetroWindow x:Class="NIBM_Project.JobRecommendation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="JobRecommendation" Height="730" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Label Content="What we have for you.." HorizontalAlignment="Left" Margin="30,24,0,0" VerticalAlignment="Top" Width="392" Height="61" FontSize="36" Foreground="Black" FontFamily="Segoe UI Light" Background="{x:Null}"/>
+        <GroupBox Header="Job List" HorizontalAlignment="Left" Height="335" Margin="30,210,0,0"  VerticalAlignment="Top" Width="411" BorderThickness="0.3,1,0.3,0.3" FontSize="18" BorderBrush="#FF49B4E8" Background="#FF49B4E8" FontFamily="Segoe UI Light"/>
+        <GroupBox Header="Job Details" HorizontalAlignment="Left" Height="335" Margin="460,210,0,0"  VerticalAlignment="Top" Width="402" BorderThickness="0.3,1,0.3,0.3" FontSize="18" BorderBrush="#FF49B4E8" Background="#FF49B4E8" FontFamily="Segoe UI Light"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="30,35,0,0" VerticalAlignment="Top" Width="800" FontFamily="Segoe UI Light" Foreground="Black" Background="Black"/>
+        <ComboBox Name="JobType" HorizontalAlignment="Left" SelectedValuePath="Content" Margin="100,125,0,0" VerticalAlignment="Top" Width="148" Background="{x:Null}" Height="28" SelectedIndex="0" IsEnabled="False" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="CIO"/>
+            <ComboBoxItem Content="Director of Engineering"/>
+            <ComboBoxItem Content="Software Engineer"/>
+            <ComboBoxItem Content="Technical Lead"/>
+            <ComboBoxItem Content="Solution Architecture"/>
+            <ComboBoxItem Content="Solution Engineer"/>
+            <ComboBoxItem Content="System Engineer"/>
+            <ComboBoxItem Content="Sales Representative"/>
+            <ComboBoxItem Content="General Manager"/>
+            <ComboBoxItem Content="Accounts Executive"/>
+            <ComboBoxItem Content="Technical Supervisor"/>
+            <ComboBoxItem Content="Marketing Executive"/>
+            <ComboBoxItem Content="Channel Sales Operation Manager"/>
+            <ComboBoxItem Content="Not Specified" IsSelected="True"/>
+        </ComboBox>
+
+
+        <Label Content="Job Type" HorizontalAlignment="Left" Margin="40,125,0,0" VerticalAlignment="Top" Height="28" Width="57" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <Label Content="Expected Salary" HorizontalAlignment="Left" Margin="280,125,0,0" VerticalAlignment="Top" Height="28" Width="95" Foreground="#FF151515" FontFamily="Segoe UI Light"/>
+        <ComboBox Name="ExpectedSalary" HorizontalAlignment="Left" SelectedValuePath="Content" Margin="380,125,0,0" VerticalAlignment="Top" Width="148" Background="{x:Null}" Height="28" SelectedIndex="0" IsEnabled="False" FontFamily="Segoe UI Light" >
+            <ComboBoxItem Content="10000 - 30000"/>
+            <ComboBoxItem Content="30000 - 60000"/>
+            <ComboBoxItem Content="60000 - 100000"/>
+            <ComboBoxItem Content="100000 - 150000"/>
+            <ComboBoxItem Content="More than 150000"/>
+            <ComboBoxItem Content="Not Specified" IsSelected="true"/>
+        </ComboBox>
+
+        <Label Content="Prefered Area" HorizontalAlignment="Left" Margin="555,125,0,0" VerticalAlignment="Top" Height="28" Width="95" Foreground="#FF151515" FontFamily="Segoe UI Light"/>
+        <ComboBox Name="PreferedArea" HorizontalAlignment="Left" SelectedValuePath="Content" Margin="640,125,0,0" VerticalAlignment="Top" Width="148" Background="{x:Null}" Height="28" SelectedIndex="0" IsEnabled="False" FontFamily="Segoe UI Light" >
+            <ComboBoxItem Content="Western Province"/>
+            <ComboBoxItem Content="Eastern Province"/>
+            <ComboBoxItem Content="Uva Province"/>
+            <ComboBoxItem Content="Central Province"/>
+            <ComboBoxItem Content="Southern Province"/>
+            <ComboBoxItem Content="Northen Province"/>
+            <ComboBoxItem Content="North Western Province"/>
+            <ComboBoxItem Content="North Central Province"/>
+            <ComboBoxItem Content="Sabaragamu Province"/>
+            <ComboBoxItem Content="Not Specified" IsSelected="True"/>
+        </ComboBox>
+
+        <ListBox x:Name="JobList" HorizontalAlignment="Left" Height="240" Margin="45,295,0,0" VerticalAlignment="Top" Width="377" Background="{x:Null}" Foreground="Black" BorderBrush="White" FontSize="14" SelectionChanged="JobList_SelectionChanged" FontFamily="Segoe UI Light"/>
+        <RadioButton x:Name="AutoRB" Content="Automatic Data Filter" HorizontalAlignment="Left" Margin="531,56,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.188,-0.733" Foreground="Black" GroupName="Type" IsChecked="True" Checked="RadioButton_Checked_1" Background="{x:Null}" FontFamily="Segoe UI Light"/>
+        <RadioButton x:Name="ManualRB" Content="Manual Data Filter" HorizontalAlignment="Left" Margin="715,56,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.188,-0.733" Foreground="Black" GroupName="Type" Checked="RadioButton_Checked" Background="{x:Null}" FontFamily="Segoe UI Light"/>
+
+        <Button Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="818,110,0,0" VerticalAlignment="Top" Width="50"  Click="Button_Click" Height="50">
+            <Button.Background>
+                <ImageBrush ImageSource="/NIBM Project;component/Icons/appbar.page.search.png" TileMode="Tile" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Job Title" HorizontalAlignment="Left" Margin="470,255,0,0" VerticalAlignment="Top" Height="25" Width="75" Foreground="Black" FontSize="12" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="JobTitle" Text ="{Binding jobTitle}" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="25" Margin="620,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" RenderTransformOrigin="0.475,2.885" IsEnabled="False" Background="{x:Null}" Foreground="Black" FontSize="14" BorderThickness="0" FontWeight="Bold" FontFamily="Segoe UI Light"/>
+        <Label Content="Vacancy Description" HorizontalAlignment="Left" Margin="470,285,0,0" VerticalAlignment="Top" Height="25" Width="135" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="VacancyDescription" Text ="{Binding vacancyDescription}" HorizontalAlignment="Left" VerticalContentAlignment="Top" Height="50" Margin="620,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" RenderTransformOrigin="0.475,2.885" IsEnabled="False" Background="{x:Null}" Foreground="Black" BorderThickness="0" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Prerequisites" HorizontalAlignment="Left" Margin="470,340,0,0" VerticalAlignment="Top" Height="25" Width="103" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="Prerequisites" Text ="{Binding prerequisites}"  HorizontalAlignment="Left" VerticalContentAlignment="Top" Height="60" Margin="620,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" RenderTransformOrigin="0.475,2.885" IsEnabled="False" Background="{x:Null}" Foreground="Black" FontSize="14" BorderThickness="0" FontFamily="Segoe UI Light"/>
+        <Label Content="Location / Branch" HorizontalAlignment="Left" Margin="470,405,0,0" VerticalAlignment="Top" Height="25" Width="118" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="ClosingDate" Text ="{Binding closingDate}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="26" Margin="620,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" RenderTransformOrigin="0.475,2.885" IsEnabled="False" Background="{x:Null}" Foreground="Black" BorderThickness="0" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Closing Date" HorizontalAlignment="Left" Margin="470,435,0,0" VerticalAlignment="Top" Height="25" Width="97" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="Location" Text ="{Binding location}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="620,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" RenderTransformOrigin="0.475,2.885" IsEnabled="False" Background="{x:Null}" Foreground="Black" BorderThickness="0" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Vacant Place Count" HorizontalAlignment="Left" Margin="470,495,0,0" VerticalAlignment="Top" Height="25" Width="136" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="NoOfVacancy" Text ="{Binding noOfVacancies}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="620,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229" RenderTransformOrigin="0.475,2.885" IsEnabled="False" Background="{x:Null}" Foreground="Black" BorderThickness="0" FontSize="14" FontFamily="Segoe UI Light"/>
+        <Label Content="Salary (Rs)" HorizontalAlignment="Left" Margin="470,465,0,0" VerticalAlignment="Top" Height="25" Width="75" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="Salary" Text ="{Binding salary}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="620,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" RenderTransformOrigin="0.475,2.885" IsEnabled="False" Background="{x:Null}" Foreground="Black" FontSize="14" BorderThickness="0" FontFamily="Segoe UI Light"/>
+        <ComboBox x:Name="Sort" HorizontalAlignment="Left" SelectedValuePath="Content" Margin="100,255,0,0" VerticalAlignment="Top" Width="148" Height="28" SelectionChanged="ComboBox_SelectionChanged" FontFamily="Segoe UI Light">
+            <ComboBoxItem Content="Default" IsSelected="true"/>
+            <ComboBoxItem Content="By Closing Date"/>
+            <ComboBoxItem Content="By Salary Low > High"/>
+            <ComboBoxItem Content="By Location A-Z"/>
+        </ComboBox>
+        <Label Content="Sort By" HorizontalAlignment="Left" Margin="45,255,0,0" VerticalAlignment="Top" Height="28" Width="51" Foreground="Black" FontFamily="Segoe UI Light"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="30,130,0,0" VerticalAlignment="Top" Width="800" FontFamily="Segoe UI Light" Background="Black"/>
+    </Grid>
+</Controls:MetroWindow>

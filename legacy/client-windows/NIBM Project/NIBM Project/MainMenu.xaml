@@ -1,0 +1,58 @@
+﻿<Controls:MetroWindow x:Class="NIBM_Project.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="MainMenu" Height="600" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Label x:Name="welcome" Content="User..!!" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="339,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.158,1.308" Width="468" FontSize="48" Foreground="Black" Height="73" FontFamily="Segoe UI Light"/>
+        <Label x:Name="welcomeLabel" Content="Welcome" HorizontalAlignment="Left" Margin="100,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.158,1.308" Width="234" FontSize="48" Foreground="Black" Height="73" FontFamily="Segoe UI Light"/>
+        <Rectangle x:Name="StatusBar" Fill="White" HorizontalAlignment="Center" Height="31" Margin="-2,540,-2,0" Stroke="Black" VerticalAlignment="Top" Width="898" Opacity="0.1">
+            <Rectangle.Effect>
+                <BlurEffect/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Label x:Name="State" Content="HDCBIS14.2"  HorizontalAlignment="Right" Margin="0,540,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right"  VerticalContentAlignment="Top" Width="160" Height="31" FontSize="16" Foreground="Black" FontFamily="Segoe WP Light"/>
+        <Controls:Tile Title="Profile Management" TiltFactor="2" Width="270" Height="270" Margin="100,122,524,179" Click="Button_Click" Background="#FF2D88EF" FontFamily="Segoe UI Light">
+            <StackPanel Height="100" Width="100">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Icons/appbar.user.tie.png"/>
+                </StackPanel.Background>
+            </StackPanel>
+        </Controls:Tile>
+        <Controls:Tile Title="Recommendations" TiltFactor="2" Width="130" Height="130" Margin="100,402,664,39" Background="#FF2D88EF" Click="Button_Click_1" FontFamily="Segoe UI Light">
+            <StackPanel Height="70" Width="70">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Icons/appbar.user.tie.png"/>
+                </StackPanel.Background>
+            </StackPanel>
+        </Controls:Tile>
+        <Controls:Tile Title="Company Info" TiltFactor="2" Height="130" Width="130" Margin="240,402,524,39" Background="#FF2D88EF" Click="Button_Click_2" FontFamily="Segoe UI Light">
+            <StackPanel Height="70" Width="70">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Icons/appbar.user.tie.png"/>
+                </StackPanel.Background>
+            </StackPanel>
+        </Controls:Tile>
+        <Controls:Tile Title="Refresh" Name="nothing" TiltFactor="2" Width="130" Height="130" Margin="380,122,384,319" Background="#FF2D88EF" Click="nothing_Click" FontFamily="Segoe UI Light">
+            <StackPanel Height="70" Width="70">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Icons/appbar.refresh.white.png"/>
+                </StackPanel.Background>
+            </StackPanel>
+        </Controls:Tile>
+        <Controls:Tile Title="Log Out" Name="logout" TiltFactor="2" Width="130" Height="130" Margin="380,402,384,39" Background="#FF2D88EF" Click="logout_Click" FontFamily="Segoe UI Light">
+            <StackPanel Height="70" Width="70">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Icons/appbar.power.white.png"/>
+                </StackPanel.Background>
+            </StackPanel>
+        </Controls:Tile>
+        <Controls:Tile Title="Delete Account" Name="delete" TiltFactor="2" Width="130" Height="130" Margin="380,262,384,179" Background="#FF2D88EF" Click="delete_Click" FontFamily="Segoe UI Light">
+            <StackPanel Height="70" Width="70">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="Icons/appbar.user.delete.png"/>
+                </StackPanel.Background>
+            </StackPanel>
+        </Controls:Tile>
+    </Grid>
+</Controls:MetroWindow>
